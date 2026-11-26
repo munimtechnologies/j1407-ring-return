@@ -1,0 +1,62 @@
+===== setup-01-pip: pip install -r requirements.txt
+Collecting numpy (from -r requirements.txt (line 1))
+  Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (6.6 kB)
+Collecting astropy (from -r requirements.txt (line 2))
+  Downloading astropy-8.0.3-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (11 kB)
+Collecting astropy-iers-data>=0.2026.10.19.0.52.1 (from astropy->-r requirements.txt (line 2))
+  Downloading astropy_iers_data-0.2026.11.23.0.35.53-py3-none-any.whl.metadata (3.2 kB)
+Collecting packaging>=25.0 (from astropy->-r requirements.txt (line 2))
+  Downloading packaging-26.4-py3-none-any.whl.metadata (3.5 kB)
+Collecting pyerfa>=2.0.1.3 (from astropy->-r requirements.txt (line 2))
+  Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (5.7 kB)
+Collecting PyYAML>=6.0.0 (from astropy->-r requirements.txt (line 2))
+  Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.3 kB)
+Downloading numpy-2.5.5-cp312-cp312-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (15.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 15.7/15.7 MB 45.6 MB/s eta 0:00:00
+Downloading astropy-8.0.3-cp311-abi3-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (10.4 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 10.4/10.4 MB 45.1 MB/s eta 0:00:00
+Downloading astropy_iers_data-0.2026.11.23.0.35.53-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 31.0 MB/s eta 0:00:00
+Downloading packaging-26.4-py3-none-any.whl (140 kB)
+Downloading pyerfa-2.0.1.5-cp39-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (738 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 738.7/738.7 kB 14.9 MB/s eta 0:00:00
+Downloading pyyaml-6.0.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (849 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 849.2/849.2 kB 21.2 MB/s eta 0:00:00
+Installing collected packages: PyYAML, packaging, numpy, astropy-iers-data, pyerfa, astropy
+Successfully installed PyYAML-6.0.4 astropy-8.0.3 astropy-iers-data-0.2026.11.23.0.35.53 numpy-2.5.5 packaging-26.4 pyerfa-2.0.1.5
+
+===== run-01-python: python -m unittest -v test_j1407
+
+===== run-02-python: python job.py --data-dir /data --out-dir /out
+Welcome to ASAS-SN Skypatrol!
+
+Current Deployment Version: 0.6.20 (11 SEPTEMBER 2025)
+Please upgrade your client if not up to date.
+
+New major release coming for Skypatrol. 
+We are rebuilding our catalogs and lightcurves in full.
+The API will remain the same, but asas_sn_ids will change for some targets.
+
+Kyle Hart 
+03 November 2026
+
+Downloading Curves...
+Pulled 1 of 1
+[   33.8s] ASAS-SN 498216460122 (rank 0, 0.5"): 1657 rows
+[   33.8s] ASAS-SN points used: 1372
+[   36.5s] TESScut sector 11: tess-s0011-1-1_211.949708_-39.761861_11x11_astrocut.fits
+[   39.0s] TESScut sector 38: tess-s0038-1-1_211.949708_-39.761861_11x11_astrocut.fits
+[   44.0s] TESScut sector 64: tess-s0064-1-2_211.949708_-39.761861_11x11_astrocut.fits
+[   47.6s] TESScut sector 102: tess-s0102-1-2_211.949708_-39.761861_11x11_astrocut.fits
+[   47.7s] TESS sector 11: 22 daily bins, sector/ref 1.014, min 0.958
+[   47.7s] TESS sector 38: 26 daily bins, sector/ref 0.986, min 0.951
+[   47.7s] TESS sector 64: 22 daily bins, sector/ref 0.000, min 0.000
+[   47.7s] TESS sector 102: 25 daily bins, sector/ref 1.044, min 1.031
+[   47.7s] dip points 0, events 0, strong 0, TESS dip bins 22
+[   47.7s] grid: 35065 trial periods 1.0-25.0 yr
+[   47.9s] scan primary: band 11-18 yr excluded 0.7703 (7879/10228) -> PARTLY_CLOSED; 14-17 yr 0.8492; allowed runs 45
+[   48.1s] scan one_night: band 11-18 yr excluded 0.8214 (8401/10228) -> PARTLY_CLOSED; 14-17 yr 0.8761; allowed runs 44
+[   48.3s] scan with_tess: band 11-18 yr excluded 0.7703 (7879/10228) -> PARTLY_CLOSED; 14-17 yr 0.8492; allowed runs 46
+[   48.5s] scan asassn_from_2018_03: band 11-18 yr excluded 0.7703 (7879/10228) -> PARTLY_CLOSED; 14-17 yr 0.8492; allowed runs 62
+[   48.9s] injection: {'n': 200, 'covered': 148, 'recovered': 148, 'vetoed_anyway': 0}
+[   48.9s] OUTCOME BAND_11_18_PARTLY_CLOSED
